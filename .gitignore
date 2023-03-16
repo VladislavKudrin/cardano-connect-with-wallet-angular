@@ -40,3 +40,12 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Storybook build files
+storybook-static/
+
+# IDE files and directories
+.vscode/
+.idea/
+*.iml
+*.swp

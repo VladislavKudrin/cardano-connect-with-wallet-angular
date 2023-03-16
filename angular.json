@@ -3,5 +3,41 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "cardano-connect-with-wallet-angular": {
+      "projectType": "library",
+      "root": "projects/cardano-connect-with-wallet-angular",
+      "sourceRoot": "projects/cardano-connect-with-wallet-angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/cardano-connect-with-wallet-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/cardano-connect-with-wallet-angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/cardano-connect-with-wallet-angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/cardano-connect-with-wallet-angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }
